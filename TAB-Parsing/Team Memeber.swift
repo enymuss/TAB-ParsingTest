@@ -10,7 +10,8 @@ import Foundation
 
 class TeamMember {
   
+  var profileImageURL : String = ""
   var nameAndSurname : String = ""
   var positionInCompany : String = ""
-  var profileImageURL : String = ""
+  var description : String = ""
 }
