@@ -14,6 +14,12 @@
 		F85354021A1A849C00621EAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85354011A1A849C00621EAE /* Images.xcassets */; };
 		F85354051A1A849C00621EAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85354031A1A849C00621EAE /* LaunchScreen.xib */; };
 		F85354111A1A849C00621EAE /* TAB_ParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85354101A1A849C00621EAE /* TAB_ParsingTests.swift */; };
+		F85421761A1A8A2500B0AF0F /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = F85421711A1A8A2500B0AF0F /* TFHpple.m */; };
+		F85421771A1A8A2500B0AF0F /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F85421731A1A8A2500B0AF0F /* TFHppleElement.m */; };
+		F85421781A1A8A2500B0AF0F /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F85421751A1A8A2500B0AF0F /* XPathQuery.m */; };
+		F854217B1A1A8B0B00B0AF0F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */; };
+		F854217D1A1A8B7300B0AF0F /* Team Memeber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854217C1A1A8B7300B0AF0F /* Team Memeber.swift */; };
+		F854217F1A1A8CBF00B0AF0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F854217E1A1A8CBF00B0AF0F /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,16 @@
 		F853540A1A1A849C00621EAE /* TAB-ParsingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TAB-ParsingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F853540F1A1A849C00621EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F85354101A1A849C00621EAE /* TAB_ParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAB_ParsingTests.swift; sourceTree = "<group>"; };
+		F854216F1A1A8A2400B0AF0F /* TAB-Parsing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TAB-Parsing-Bridging-Header.h"; sourceTree = "<group>"; };
+		F85421701A1A8A2500B0AF0F /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		F85421711A1A8A2500B0AF0F /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		F85421721A1A8A2500B0AF0F /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		F85421731A1A8A2500B0AF0F /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		F85421741A1A8A2500B0AF0F /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		F85421751A1A8A2500B0AF0F /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		F854217C1A1A8B7300B0AF0F /* Team Memeber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Team Memeber.swift"; sourceTree = "<group>"; };
+		F854217E1A1A8CBF00B0AF0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F854217F1A1A8CBF00B0AF0F /* UIKit.framework in Frameworks */,
+				F854217B1A1A8B0B00B0AF0F /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +79,8 @@
 		F85353E91A1A849C00621EAE = {
 			isa = PBXGroup;
 			children = (
+				F854217E1A1A8CBF00B0AF0F /* UIKit.framework */,
+				F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */,
 				F85353F41A1A849C00621EAE /* TAB-Parsing */,
 				F853540D1A1A849C00621EAE /* TAB-ParsingTests */,
 				F85353F31A1A849C00621EAE /* Products */,
@@ -81,10 +101,13 @@
 			children = (
 				F85353F71A1A849C00621EAE /* AppDelegate.swift */,
 				F85353FC1A1A849C00621EAE /* ViewController.swift */,
+				F854217C1A1A8B7300B0AF0F /* Team Memeber.swift */,
 				F85353FE1A1A849C00621EAE /* Main.storyboard */,
 				F85354011A1A849C00621EAE /* Images.xcassets */,
 				F85354031A1A849C00621EAE /* LaunchScreen.xib */,
 				F85353F91A1A849C00621EAE /* TAB_Parsing.xcdatamodeld */,
+				F854216F1A1A8A2400B0AF0F /* TAB-Parsing-Bridging-Header.h */,
+				F85421791A1A8A2E00B0AF0F /* Hpple */,
 				F85353F51A1A849C00621EAE /* Supporting Files */,
 			);
 			path = "TAB-Parsing";
@@ -113,6 +136,19 @@
 				F853540F1A1A849C00621EAE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F85421791A1A8A2E00B0AF0F /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				F85421701A1A8A2500B0AF0F /* TFHpple.h */,
+				F85421711A1A8A2500B0AF0F /* TFHpple.m */,
+				F85421721A1A8A2500B0AF0F /* TFHppleElement.h */,
+				F85421731A1A8A2500B0AF0F /* TFHppleElement.m */,
+				F85421741A1A8A2500B0AF0F /* XPathQuery.h */,
+				F85421751A1A8A2500B0AF0F /* XPathQuery.m */,
+			);
+			name = Hpple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +254,10 @@
 				F85353FD1A1A849C00621EAE /* ViewController.swift in Sources */,
 				F85353FB1A1A849C00621EAE /* TAB_Parsing.xcdatamodeld in Sources */,
 				F85353F81A1A849C00621EAE /* AppDelegate.swift in Sources */,
+				F85421761A1A8A2500B0AF0F /* TFHpple.m in Sources */,
+				F85421781A1A8A2500B0AF0F /* XPathQuery.m in Sources */,
+				F85421771A1A8A2500B0AF0F /* TFHppleElement.m in Sources */,
+				F854217D1A1A8B7300B0AF0F /* Team Memeber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +333,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -329,6 +373,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -340,9 +388,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "TAB-Parsing/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TAB-Parsing/TAB-Parsing-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +401,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "TAB-Parsing/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TAB-Parsing/TAB-Parsing-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -409,6 +462,7 @@
 				F85354161A1A849C00621EAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F85354171A1A849C00621EAE /* Build configuration list for PBXNativeTarget "TAB-ParsingTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +471,7 @@
 				F85354191A1A849C00621EAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
