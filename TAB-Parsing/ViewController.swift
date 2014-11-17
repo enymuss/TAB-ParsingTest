@@ -8,22 +8,37 @@
 
 import UIKit
 
-class ViewController: UICollectionViewController {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
   
   @IBOutlet var teamMembersCollectionView: UICollectionView!
+  var TeamMembersArray = ["Tom", "Bob", "Sam", "Tim", "Al"];
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    println("Hello!")
+    teamMembersCollectionView.reloadData()
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
+  
+  
+  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return TeamMembersArray.count;
+  }
+  
+  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    let kCellIdentifier: String = "TeamMemberCell"
+    
+    var cell: UICollectionViewCell = teamMembersCollectionView.dequeueReusableCellWithReuseIdentifier(kCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
+    
+    cell.backgroundColor = UIColor.whiteColor()
+    
+    return cell
+  }
 
 }
 
