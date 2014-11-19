@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
   
-  
   @IBOutlet var teamMembersCollectionView: UICollectionView!
+  
+  //create array to hold the team members
   var allTeamMembersArray = [TeamMember]()
   
   func loadAndParseWebsite () {
+    // function takes raw data from url, parses it and assaigns parsed values to a TeamMember instance
     
     let websiteURL = NSURL(string: "http://www.theappbusiness.com/our-team/")
     let websiteHTMLData = NSData(contentsOfURL: websiteURL!)
@@ -45,6 +47,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
     loadAndParseWebsite()
     teamMembersCollectionView.reloadData()
   }
@@ -60,11 +63,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    
     let kCellIdentifier: String = "TeamMemberCell"
     
     var cell = teamMembersCollectionView.dequeueReusableCellWithReuseIdentifier(kCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
-    
-    cell.backgroundColor = UIColor.whiteColor()
     
     var cellImageView = cell.viewWithTag(1) as UIImageView
     var imageData = NSData(contentsOfURL: allTeamMembersArray[indexPath.row].profileImageURL)
