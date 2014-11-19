@@ -31,7 +31,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
       
       // init teamMember and asign properties
       var teamMember = TeamMember()
-      teamMember.profileImageURL = element.children[0].firstChild!.objectForKey("src")
+      teamMember.profileImageURL = NSURL(string: element.children[0].firstChild!.objectForKey("src"))!
       teamMember.nameAndSurname = element.children[1].firstChild!.content
       teamMember.positionInCompany = element.children[2].firstChild!.content
       teamMember.description = element.children[3].firstChild!.content
@@ -65,6 +65,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var cell = teamMembersCollectionView.dequeueReusableCellWithReuseIdentifier(kCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
     
     cell.backgroundColor = UIColor.whiteColor()
+    
+    var cellImageView = cell.viewWithTag(1) as UIImageView
+    var imageData = NSData(contentsOfURL: allTeamMembersArray[indexPath.row].profileImageURL)
+    cellImageView.image = UIImage(data: imageData!)
+    
+    var nameAndSurnameLabel = cell.viewWithTag(2) as UILabel
+    nameAndSurnameLabel.text = allTeamMembersArray[indexPath.row].nameAndSurname
+    
+    var positionInCompanyLabel = cell.viewWithTag(3) as UILabel
+    positionInCompanyLabel.text = allTeamMembersArray[indexPath.row].positionInCompany
+    
+    var descriptionTextView = cell.viewWithTag(4) as UITextView
+    descriptionTextView.text = allTeamMembersArray[indexPath.row].description
     
     return cell
   }
