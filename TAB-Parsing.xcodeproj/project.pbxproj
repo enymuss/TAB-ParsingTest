@@ -20,6 +20,7 @@
 		F854217B1A1A8B0B00B0AF0F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */; };
 		F854217D1A1A8B7300B0AF0F /* Team Memeber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854217C1A1A8B7300B0AF0F /* Team Memeber.swift */; };
 		F854217F1A1A8CBF00B0AF0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F854217E1A1A8CBF00B0AF0F /* UIKit.framework */; };
+		F8565C7B1A1E63CB00D7CB38 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8565C7A1A1E63CB00D7CB38 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		F854217C1A1A8B7300B0AF0F /* Team Memeber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Team Memeber.swift"; sourceTree = "<group>"; };
 		F854217E1A1A8CBF00B0AF0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F8565C7A1A1E63CB00D7CB38 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8565C7B1A1E63CB00D7CB38 /* QuartzCore.framework in Frameworks */,
 				F854217F1A1A8CBF00B0AF0F /* UIKit.framework in Frameworks */,
 				F854217B1A1A8B0B00B0AF0F /* libxml2.dylib in Frameworks */,
 			);
@@ -79,6 +82,7 @@
 		F85353E91A1A849C00621EAE = {
 			isa = PBXGroup;
 			children = (
+				F8565C7A1A1E63CB00D7CB38 /* QuartzCore.framework */,
 				F854217E1A1A8CBF00B0AF0F /* UIKit.framework */,
 				F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */,
 				F85353F41A1A849C00621EAE /* TAB-Parsing */,

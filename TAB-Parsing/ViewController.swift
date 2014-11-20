@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
   
@@ -69,8 +70,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var cell = teamMembersCollectionView.dequeueReusableCellWithReuseIdentifier(kCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
     
     var cellImageView = cell.viewWithTag(1) as UIImageView
-    var imageData = NSData(contentsOfURL: allTeamMembersArray[indexPath.row].profileImageURL)
-    cellImageView.image = UIImage(data: imageData!)
+    cellImageView = addBoardedProfilePicture(cellImageView, indexPath: indexPath)
     
     var nameAndSurnameLabel = cell.viewWithTag(2) as UILabel
     nameAndSurnameLabel.text = allTeamMembersArray[indexPath.row].nameAndSurname
@@ -82,6 +82,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     descriptionTextView.text = allTeamMembersArray[indexPath.row].description
     
     return cell
+  }
+  
+  func addBoardedProfilePicture(imageView: UIImageView, indexPath: NSIndexPath) -> UIImageView {
+    
+    // load image
+    var imageData = NSData(contentsOfURL: allTeamMembersArray[indexPath.row].profileImageURL)
+    imageView.image = UIImage(data: imageData!)
+    
+    // round the edges and add boarder via CALayer
+    imageView.layer.cornerRadius = imageView.frame.size.width/2
+    imageView.layer.masksToBounds = true
+    imageView.layer.borderWidth = 2
+    imageView.layer.borderColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [1.0, 0.4, 0.0, 1.0])
+    
+    
+    return imageView
   }
   
 }
