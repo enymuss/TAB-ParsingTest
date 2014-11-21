@@ -19,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
   
   func loadAndParseWebsite () {
     // function takes raw data from url, parses it and assaigns parsed values to a TeamMember instance
-    
+
     let websiteURL = NSURL(string: "http://www.theappbusiness.com/our-team/")
     let websiteHTMLData = NSData(contentsOfURL: websiteURL!)
     
@@ -28,23 +28,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let websiteXpathQueryString = "//div[@class = 'col col2']"
     let teamMembersNodes = websiteParser.searchWithXPathQuery(websiteXpathQueryString)
     
-//    var teamMembersArray = [TeamMember]()
-    
     for object in teamMembersNodes {
+      
       var element = object as TFHppleElement
       
       saveToCoreData(element)
-//      // init teamMember and asign properties
-//      var teamMember = TeamMember()
-//      teamMember.profileImage = element.children[0].firstChild!.objectForKey("src")
-//      teamMember.nameAndSurname = element.children[1].firstChild!.content
-//      teamMember.positionInCompany = element.children[2].firstChild!.content
-//      teamMember.memberDescription = element.children[3].firstChild!.content
-//      
-//      teamMembersArray.append(teamMember)
     }
-    
-//    allTeamMembersArray  = teamMembersArray
   }
   
   override func viewDidLoad() {

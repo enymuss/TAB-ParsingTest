@@ -18,7 +18,6 @@
 		F85421771A1A8A2500B0AF0F /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F85421731A1A8A2500B0AF0F /* TFHppleElement.m */; };
 		F85421781A1A8A2500B0AF0F /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F85421751A1A8A2500B0AF0F /* XPathQuery.m */; };
 		F854217B1A1A8B0B00B0AF0F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */; };
-		F854217D1A1A8B7300B0AF0F /* Team Memeber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F854217C1A1A8B7300B0AF0F /* Team Memeber.swift */; };
 		F854217F1A1A8CBF00B0AF0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F854217E1A1A8CBF00B0AF0F /* UIKit.framework */; };
 		F8565C7B1A1E63CB00D7CB38 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8565C7A1A1E63CB00D7CB38 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -53,7 +52,6 @@
 		F85421741A1A8A2500B0AF0F /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		F85421751A1A8A2500B0AF0F /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		F854217C1A1A8B7300B0AF0F /* Team Memeber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Team Memeber.swift"; sourceTree = "<group>"; };
 		F854217E1A1A8CBF00B0AF0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8565C7A1A1E63CB00D7CB38 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -105,7 +103,6 @@
 			children = (
 				F85353F71A1A849C00621EAE /* AppDelegate.swift */,
 				F85353FC1A1A849C00621EAE /* ViewController.swift */,
-				F854217C1A1A8B7300B0AF0F /* Team Memeber.swift */,
 				F85353FE1A1A849C00621EAE /* Main.storyboard */,
 				F85354011A1A849C00621EAE /* Images.xcassets */,
 				F85354031A1A849C00621EAE /* LaunchScreen.xib */,
@@ -261,7 +258,6 @@
 				F85421761A1A8A2500B0AF0F /* TFHpple.m in Sources */,
 				F85421781A1A8A2500B0AF0F /* XPathQuery.m in Sources */,
 				F85421771A1A8A2500B0AF0F /* TFHppleElement.m in Sources */,
-				F854217D1A1A8B7300B0AF0F /* Team Memeber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
