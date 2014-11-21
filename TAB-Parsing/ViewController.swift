@@ -70,7 +70,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var cell = teamMembersCollectionView.dequeueReusableCellWithReuseIdentifier(kCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
     
     var cellImageView = cell.viewWithTag(1) as UIImageView
-    cellImageView = addBoardedProfilePicture(cellImageView, indexPath: indexPath)
+    cellImageView = roundProfilePicture (cellImageView, indexPath: indexPath)
     
     var nameAndSurnameLabel = cell.viewWithTag(2) as UILabel
     nameAndSurnameLabel.text = allTeamMembersArray[indexPath.row].nameAndSurname
@@ -81,24 +81,35 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var descriptionTextView = cell.viewWithTag(4) as UITextView
     descriptionTextView.text = allTeamMembersArray[indexPath.row].description
     
+    cell.addSubview(addBorderAroundImageView(cellImageView))
+    
     return cell
   }
   
-  func addBoardedProfilePicture(imageView: UIImageView, indexPath: NSIndexPath) -> UIImageView {
+  func roundProfilePicture (imageView: UIImageView, indexPath: NSIndexPath) -> UIImageView {
     
     // load image
     var imageData = NSData(contentsOfURL: allTeamMembersArray[indexPath.row].profileImageURL)
     imageView.image = UIImage(data: imageData!)
     
-    // round the edges and add boarder via CALayer
+    // round the edges
     imageView.layer.cornerRadius = imageView.frame.size.width/2
     imageView.layer.masksToBounds = true
-    imageView.layer.borderWidth = 2
-    imageView.layer.borderColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [1.0, 0.4, 0.0, 1.0])
-    
     
     return imageView
   }
   
+  func addBorderAroundImageView (imageView: UIImageView) -> UIView {
+    
+    var orangeView = UIView(frame: CGRectMake(0, 0, 160, 160))
+    orangeView.center = imageView.center
+    orangeView.layer.cornerRadius = 80
+    orangeView.layer.masksToBounds = true
+    orangeView.layer.borderWidth = 3
+    orangeView.layer.borderColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [1.0, 0.4, 0.0, 1.0])
+    
+    return orangeView
+  
+  }
 }
 
