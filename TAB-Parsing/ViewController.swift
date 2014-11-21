@@ -8,13 +8,14 @@
 
 import UIKit
 import QuartzCore
+import CoreData
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
   
   @IBOutlet var teamMembersCollectionView: UICollectionView!
   
   //create array to hold the team members
-  var allTeamMembersArray = [TeamMember]()
+  var allTeamMembersArray = [NSManagedObject]()
   
   func loadAndParseWebsite () {
     // function takes raw data from url, parses it and assaigns parsed values to a TeamMember instance
@@ -27,22 +28,23 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let websiteXpathQueryString = "//div[@class = 'col col2']"
     let teamMembersNodes = websiteParser.searchWithXPathQuery(websiteXpathQueryString)
     
-    var teamMembersArray = [TeamMember]()
+//    var teamMembersArray = [TeamMember]()
     
     for object in teamMembersNodes {
       var element = object as TFHppleElement
       
-      // init teamMember and asign properties
-      var teamMember = TeamMember()
-      teamMember.profileImageURL = NSURL(string: element.children[0].firstChild!.objectForKey("src"))!
-      teamMember.nameAndSurname = element.children[1].firstChild!.content
-      teamMember.positionInCompany = element.children[2].firstChild!.content
-      teamMember.description = element.children[3].firstChild!.content
-      
-      teamMembersArray.append(teamMember)
+      saveToCoreData(element)
+//      // init teamMember and asign properties
+//      var teamMember = TeamMember()
+//      teamMember.profileImage = element.children[0].firstChild!.objectForKey("src")
+//      teamMember.nameAndSurname = element.children[1].firstChild!.content
+//      teamMember.positionInCompany = element.children[2].firstChild!.content
+//      teamMember.memberDescription = element.children[3].firstChild!.content
+//      
+//      teamMembersArray.append(teamMember)
     }
     
-    allTeamMembersArray  = teamMembersArray
+//    allTeamMembersArray  = teamMembersArray
   }
   
   override func viewDidLoad() {
@@ -51,6 +53,23 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     loadAndParseWebsite()
     teamMembersCollectionView.reloadData()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+
+    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    let managedContext = appDelegate.managedObjectContext!
+    
+    let fetchRequest = NSFetchRequest(entityName: "Member")
+    var error: NSError?
+    
+    let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+    
+    if let results = fetchedResults {
+      allTeamMembersArray = results
+    }
+    
   }
   
   override func didReceiveMemoryWarning() {
@@ -69,17 +88,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     var cell = teamMembersCollectionView.dequeueReusableCellWithReuseIdentifier(kCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
     
+    let teamMember = allTeamMembersArray[indexPath.row]
+    
     var cellImageView = cell.viewWithTag(1) as UIImageView
-    cellImageView = roundProfilePicture (cellImageView, indexPath: indexPath)
+    cellImageView = roundProfilePicture(cellImageView, indexPath: indexPath)
     
     var nameAndSurnameLabel = cell.viewWithTag(2) as UILabel
-    nameAndSurnameLabel.text = allTeamMembersArray[indexPath.row].nameAndSurname
+    nameAndSurnameLabel.text = teamMember.valueForKey("nameAndSurname") as String?
     
     var positionInCompanyLabel = cell.viewWithTag(3) as UILabel
-    positionInCompanyLabel.text = allTeamMembersArray[indexPath.row].positionInCompany
+    positionInCompanyLabel.text = teamMember.valueForKey("positionInCompany") as String?
     
     var descriptionTextView = cell.viewWithTag(4) as UITextView
-    descriptionTextView.text = allTeamMembersArray[indexPath.row].description
+    descriptionTextView.text = teamMember.valueForKey("memberDescription") as String?
     
     cell.addSubview(addBorderAroundImageView(cellImageView))
     
@@ -89,7 +110,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
   func roundProfilePicture (imageView: UIImageView, indexPath: NSIndexPath) -> UIImageView {
     
     // load image
-    var imageData = NSData(contentsOfURL: allTeamMembersArray[indexPath.row].profileImageURL)
+    let teamMember = allTeamMembersArray[indexPath.row]
+    var imageData = teamMember.valueForKey("imageData") as NSData?
     imageView.image = UIImage(data: imageData!)
     
     // round the edges
@@ -110,6 +132,37 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     return orangeView
   
+  }
+  
+  func saveToCoreData (object: TFHppleElement) {
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    let managedContext = appDelegate.managedObjectContext!
+    
+    let entity = NSEntityDescription.entityForName("Member", inManagedObjectContext: managedContext)
+    let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+    
+    let profileImageString = object.children[0].firstChild!.objectForKey("src")
+    let imageURL = NSURL(string: profileImageString)
+    let profileImageData = NSData(contentsOfURL: imageURL!)
+    person.setValue(profileImageData, forKey: "imageData")
+    
+    let nameAndSurname = object.children[1].firstChild!.content
+    person.setValue(nameAndSurname, forKey: "nameAndSurname")
+    
+    let positionInCompany = object.children[2].firstChild!.content
+    person.setValue(positionInCompany, forKey: "positionInCompany")
+    
+    let memberDescription = object.children[3].firstChild!.content
+    person.setValue(memberDescription, forKey: "memberDescription")
+    
+    var error: NSError?
+    if !managedContext.save(&error) {
+      println("Could not save \(error), \(error?.userInfo)")
+    }
+    
+    allTeamMembersArray.append(person)
+    
   }
 }
 

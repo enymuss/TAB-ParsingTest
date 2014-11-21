@@ -10,8 +10,8 @@ import Foundation
 
 class TeamMember {
   
-  var profileImageURL = NSURL()
-  var nameAndSurname : String = ""
-  var positionInCompany : String = ""
-  var description : String = ""
+  var profileImageData = NSData()
+  var nameAndSurname: String = ""
+  var positionInCompany: String = ""
+  var memberDescription: String = ""
 }
