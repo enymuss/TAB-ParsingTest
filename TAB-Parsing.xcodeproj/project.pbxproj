@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10AE2F815EBE7EAAB4A2287 /* libPods-TAB-Parsing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDAD5A231AC1B06AE01CCD9 /* libPods-TAB-Parsing.a */; };
 		F85353F81A1A849C00621EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85353F71A1A849C00621EAE /* AppDelegate.swift */; };
 		F85353FB1A1A849C00621EAE /* TAB_Parsing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F85353F91A1A849C00621EAE /* TAB_Parsing.xcdatamodeld */; };
 		F85353FD1A1A849C00621EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85353FC1A1A849C00621EAE /* ViewController.swift */; };
@@ -14,9 +15,6 @@
 		F85354021A1A849C00621EAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85354011A1A849C00621EAE /* Images.xcassets */; };
 		F85354051A1A849C00621EAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85354031A1A849C00621EAE /* LaunchScreen.xib */; };
 		F85354111A1A849C00621EAE /* TAB_ParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85354101A1A849C00621EAE /* TAB_ParsingTests.swift */; };
-		F85421761A1A8A2500B0AF0F /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = F85421711A1A8A2500B0AF0F /* TFHpple.m */; };
-		F85421771A1A8A2500B0AF0F /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F85421731A1A8A2500B0AF0F /* TFHppleElement.m */; };
-		F85421781A1A8A2500B0AF0F /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F85421751A1A8A2500B0AF0F /* XPathQuery.m */; };
 		F854217B1A1A8B0B00B0AF0F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */; };
 		F854217F1A1A8CBF00B0AF0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F854217E1A1A8CBF00B0AF0F /* UIKit.framework */; };
 		F8565C7B1A1E63CB00D7CB38 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8565C7A1A1E63CB00D7CB38 /* QuartzCore.framework */; };
@@ -33,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FDAD5A231AC1B06AE01CCD9 /* libPods-TAB-Parsing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TAB-Parsing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A44E4C9519D71B68ECC506F6 /* Pods-TAB-Parsing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAB-Parsing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TAB-Parsing/Pods-TAB-Parsing.debug.xcconfig"; sourceTree = "<group>"; };
+		B14E8B734AC51C1555316EC1 /* Pods-TAB-Parsing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAB-Parsing.release.xcconfig"; path = "Pods/Target Support Files/Pods-TAB-Parsing/Pods-TAB-Parsing.release.xcconfig"; sourceTree = "<group>"; };
 		F85353F21A1A849C00621EAE /* TAB-Parsing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TAB-Parsing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85353F61A1A849C00621EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F85353F71A1A849C00621EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,12 +46,6 @@
 		F853540F1A1A849C00621EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F85354101A1A849C00621EAE /* TAB_ParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAB_ParsingTests.swift; sourceTree = "<group>"; };
 		F854216F1A1A8A2400B0AF0F /* TAB-Parsing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TAB-Parsing-Bridging-Header.h"; sourceTree = "<group>"; };
-		F85421701A1A8A2500B0AF0F /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
-		F85421711A1A8A2500B0AF0F /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
-		F85421721A1A8A2500B0AF0F /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
-		F85421731A1A8A2500B0AF0F /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
-		F85421741A1A8A2500B0AF0F /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
-		F85421751A1A8A2500B0AF0F /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		F854217E1A1A8CBF00B0AF0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8565C7A1A1E63CB00D7CB38 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -64,6 +59,7 @@
 				F8565C7B1A1E63CB00D7CB38 /* QuartzCore.framework in Frameworks */,
 				F854217F1A1A8CBF00B0AF0F /* UIKit.framework in Frameworks */,
 				F854217B1A1A8B0B00B0AF0F /* libxml2.dylib in Frameworks */,
+				C10AE2F815EBE7EAAB4A2287 /* libPods-TAB-Parsing.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,15 +73,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F85353E91A1A849C00621EAE = {
+		1953C5815D5D6F1856317B3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				F8565C7A1A1E63CB00D7CB38 /* QuartzCore.framework */,
 				F854217E1A1A8CBF00B0AF0F /* UIKit.framework */,
 				F854217A1A1A8B0B00B0AF0F /* libxml2.dylib */,
+				1FDAD5A231AC1B06AE01CCD9 /* libPods-TAB-Parsing.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C39B52D90BFAE1BB453AFD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A44E4C9519D71B68ECC506F6 /* Pods-TAB-Parsing.debug.xcconfig */,
+				B14E8B734AC51C1555316EC1 /* Pods-TAB-Parsing.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F85353E91A1A849C00621EAE = {
+			isa = PBXGroup;
+			children = (
 				F85353F41A1A849C00621EAE /* TAB-Parsing */,
 				F853540D1A1A849C00621EAE /* TAB-ParsingTests */,
 				F85353F31A1A849C00621EAE /* Products */,
+				6C39B52D90BFAE1BB453AFD2 /* Pods */,
+				1953C5815D5D6F1856317B3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,7 +123,6 @@
 				F85354031A1A849C00621EAE /* LaunchScreen.xib */,
 				F85353F91A1A849C00621EAE /* TAB_Parsing.xcdatamodeld */,
 				F854216F1A1A8A2400B0AF0F /* TAB-Parsing-Bridging-Header.h */,
-				F85421791A1A8A2E00B0AF0F /* Hpple */,
 				F85353F51A1A849C00621EAE /* Supporting Files */,
 			);
 			path = "TAB-Parsing";
@@ -139,19 +153,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F85421791A1A8A2E00B0AF0F /* Hpple */ = {
-			isa = PBXGroup;
-			children = (
-				F85421701A1A8A2500B0AF0F /* TFHpple.h */,
-				F85421711A1A8A2500B0AF0F /* TFHpple.m */,
-				F85421721A1A8A2500B0AF0F /* TFHppleElement.h */,
-				F85421731A1A8A2500B0AF0F /* TFHppleElement.m */,
-				F85421741A1A8A2500B0AF0F /* XPathQuery.h */,
-				F85421751A1A8A2500B0AF0F /* XPathQuery.m */,
-			);
-			name = Hpple;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F85354141A1A849C00621EAE /* Build configuration list for PBXNativeTarget "TAB-Parsing" */;
 			buildPhases = (
+				372335643BFDA26C46BBA1CB /* Check Pods Manifest.lock */,
 				F85353EE1A1A849C00621EAE /* Sources */,
 				F85353EF1A1A849C00621EAE /* Frameworks */,
 				F85353F01A1A849C00621EAE /* Resources */,
+				A34D94AFDC8926C087D2F646 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,6 +250,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		372335643BFDA26C46BBA1CB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A34D94AFDC8926C087D2F646 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TAB-Parsing/Pods-TAB-Parsing-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F85353EE1A1A849C00621EAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -255,9 +291,6 @@
 				F85353FD1A1A849C00621EAE /* ViewController.swift in Sources */,
 				F85353FB1A1A849C00621EAE /* TAB_Parsing.xcdatamodeld in Sources */,
 				F85353F81A1A849C00621EAE /* AppDelegate.swift in Sources */,
-				F85421761A1A8A2500B0AF0F /* TFHpple.m in Sources */,
-				F85421781A1A8A2500B0AF0F /* XPathQuery.m in Sources */,
-				F85421771A1A8A2500B0AF0F /* TFHppleElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +419,7 @@
 		};
 		F85354151A1A849C00621EAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A44E4C9519D71B68ECC506F6 /* Pods-TAB-Parsing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -399,6 +433,7 @@
 		};
 		F85354161A1A849C00621EAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B14E8B734AC51C1555316EC1 /* Pods-TAB-Parsing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
