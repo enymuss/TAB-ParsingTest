@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C10AE2F815EBE7EAAB4A2287 /* libPods-TAB-Parsing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDAD5A231AC1B06AE01CCD9 /* libPods-TAB-Parsing.a */; };
+		C594CDD21AB0D6F100A0AC11 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C594CDD11AB0D6F100A0AC11 /* MemberCollectionViewCell.swift */; };
+		C594CDD41AB0DE0B00A0AC11 /* WebsiteParseAndSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = C594CDD31AB0DE0B00A0AC11 /* WebsiteParseAndSave.swift */; };
 		F85353F81A1A849C00621EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85353F71A1A849C00621EAE /* AppDelegate.swift */; };
 		F85353FB1A1A849C00621EAE /* TAB_Parsing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F85353F91A1A849C00621EAE /* TAB_Parsing.xcdatamodeld */; };
 		F85353FD1A1A849C00621EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85353FC1A1A849C00621EAE /* ViewController.swift */; };
@@ -34,6 +36,8 @@
 		1FDAD5A231AC1B06AE01CCD9 /* libPods-TAB-Parsing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TAB-Parsing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44E4C9519D71B68ECC506F6 /* Pods-TAB-Parsing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAB-Parsing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TAB-Parsing/Pods-TAB-Parsing.debug.xcconfig"; sourceTree = "<group>"; };
 		B14E8B734AC51C1555316EC1 /* Pods-TAB-Parsing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAB-Parsing.release.xcconfig"; path = "Pods/Target Support Files/Pods-TAB-Parsing/Pods-TAB-Parsing.release.xcconfig"; sourceTree = "<group>"; };
+		C594CDD11AB0D6F100A0AC11 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
+		C594CDD31AB0DE0B00A0AC11 /* WebsiteParseAndSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteParseAndSave.swift; sourceTree = "<group>"; };
 		F85353F21A1A849C00621EAE /* TAB-Parsing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TAB-Parsing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85353F61A1A849C00621EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F85353F71A1A849C00621EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			children = (
 				F85353F71A1A849C00621EAE /* AppDelegate.swift */,
 				F85353FC1A1A849C00621EAE /* ViewController.swift */,
+				C594CDD11AB0D6F100A0AC11 /* MemberCollectionViewCell.swift */,
+				C594CDD31AB0DE0B00A0AC11 /* WebsiteParseAndSave.swift */,
 				F85353FE1A1A849C00621EAE /* Main.storyboard */,
 				F85354011A1A849C00621EAE /* Images.xcassets */,
 				F85354031A1A849C00621EAE /* LaunchScreen.xib */,
@@ -288,7 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C594CDD21AB0D6F100A0AC11 /* MemberCollectionViewCell.swift in Sources */,
 				F85353FD1A1A849C00621EAE /* ViewController.swift in Sources */,
+				C594CDD41AB0DE0B00A0AC11 /* WebsiteParseAndSave.swift in Sources */,
 				F85353FB1A1A849C00621EAE /* TAB_Parsing.xcdatamodeld in Sources */,
 				F85353F81A1A849C00621EAE /* AppDelegate.swift in Sources */,
 			);
