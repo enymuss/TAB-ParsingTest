@@ -57,10 +57,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
         let kCellIdentifier: String = "TeamMemberCell"
         
-        var memberCell = teamMembersCollectionView.dequeueReusableCellWithReuseIdentifier(kCellIdentifier, forIndexPath: indexPath) as MemberCollectionViewCell
+        var memberCell = collectionView.dequeueReusableCellWithReuseIdentifier(kCellIdentifier, forIndexPath: indexPath) as MemberCollectionViewCell
         
         let teamMember = allTeamMembersArray[indexPath.row]
         
