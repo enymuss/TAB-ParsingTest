@@ -9,15 +9,15 @@
 import UIKit
 import CoreData
 
-func loadAndParseWebsite() -> [TFHppleElement] {
+func loadAndParseWebsite(url: NSURL, queryString: String) -> [TFHppleElement] {
     // function takes raw data from url, parses it and assaigns parsed values to a TeamMember instance
     
-    let websiteURL = NSURL(string: "http://www.theappbusiness.com/our-team/")
-    let websiteHTMLData = NSData(contentsOfURL: websiteURL!)
+    let websiteURL = url
+    let websiteHTMLData = NSData(contentsOfURL: websiteURL)
     
     let websiteParser: TFHpple = TFHpple(HTMLData: websiteHTMLData)
     
-    let websiteXpathQueryString = "//div[@class = 'col col2']"
+    let websiteXpathQueryString = queryString
     let websiteParsed = websiteParser.searchWithXPathQuery(websiteXpathQueryString) as [TFHppleElement]
     return websiteParsed
 
@@ -34,7 +34,12 @@ func saveToCoreData (object: TFHppleElement) {
     let profileImageString = object.children[0].firstChild!.objectForKey("src")
     let imageURL = NSURL(string: profileImageString)
     let profileImageData = NSData(contentsOfURL: imageURL!)
-    person.setValue(profileImageData, forKey: "imageData")
+    downloadImageWithURL(imageURL!, { (succeeded: Bool?, image: UIImage?) -> Void in
+        if (succeeded!) {
+            person.setValue(profileImageData, forKey: "imageData")
+        }
+    })
+    
     
     let nameAndSurname = object.children[1].firstChild!.content
     person.setValue(nameAndSurname, forKey: "nameAndSurname")
@@ -50,7 +55,18 @@ func saveToCoreData (object: TFHppleElement) {
         println("Could not save \(error), \(error?.userInfo)")
     }
     
-    //allTeamMembersArray.append(person)
     
+}
+
+func downloadImageWithURL (url: NSURL, completion: ((Bool, UIImage) -> Void)?) {
+    var myRequest = NSMutableURLRequest(URL: url)
+    NSURLConnection .sendAsynchronousRequest(myRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError?) -> Void in
+        if ((error) != nil) {
+            var image = UIImage(data: data)
+            completion!(true, image!)
+        } else {
+            println("false, error");
+        }
+    }
 }
 

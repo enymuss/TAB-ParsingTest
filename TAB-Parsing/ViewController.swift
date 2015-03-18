@@ -21,7 +21,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let parsedWebsiteArray: [TFHppleElement] = loadAndParseWebsite()
+        let parsedWebsiteArray: [TFHppleElement] = loadAndParseWebsite(NSURL(string: "http://www.theappbusiness.com/our-team/")!, "//div[@class = 'col col2']")
         for item in parsedWebsiteArray {
             var element = item as TFHppleElement
             saveToCoreData(element)
@@ -41,8 +41,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
         
         if let results = fetchedResults {
+            println(results)
             allTeamMembersArray = results
         }
+        
+        //teamMembersCollectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: (allTeamMembersArray.count-1), inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Right, animated: true)
         
     }
     
@@ -78,6 +81,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // load image
         let teamMember = allTeamMembersArray[indexPath.row]
         var imageData = teamMember.valueForKey("imageData") as NSData?
+        // download image here and save it to coreData
         imageView.image = UIImage(data: imageData!)
         
         // round the edges
