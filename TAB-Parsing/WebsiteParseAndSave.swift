@@ -6,6 +6,14 @@
 //  Copyright (c) 2015 Richard Szczerba. All rights reserved.
 //
 
+struct CoreDataAttributes {
+    static let nameAndSurname = "nameAndSurname"
+    static let positionInCompany = "positionInCompany"
+    static let memberDescription = "memberDescription"
+    static let imageURLString = "imageURLString"
+    static let imageData = "imageData"
+}
+
 import UIKit
 import CoreData
 
@@ -31,20 +39,18 @@ func saveToCoreData (object: TFHppleElement) {
     let entity = NSEntityDescription.entityForName("Member", inManagedObjectContext: managedContext)
     let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
     
-    let profileImageString = object.children[0].firstChild!.objectForKey("src")
-    let imageURL = NSURL(string: profileImageString)
-    let profileImageData = NSData(contentsOfURL: imageURL!)
-    person.setValue(profileImageData, forKey: "imageData")
+    let imageURLString = object.children[0].firstChild!.objectForKey("src") as String
+    person.setValue(imageURLString, forKey: CoreDataAttributes.imageURLString)
     
     
     let nameAndSurname = object.children[1].firstChild!.content
-    person.setValue(nameAndSurname, forKey: "nameAndSurname")
+    person.setValue(nameAndSurname, forKey: CoreDataAttributes.nameAndSurname)
     
     let positionInCompany = object.children[2].firstChild!.content
-    person.setValue(positionInCompany, forKey: "positionInCompany")
+    person.setValue(positionInCompany, forKey: CoreDataAttributes.positionInCompany)
     
     let memberDescription = object.children[3].firstChild!.content
-    person.setValue(memberDescription, forKey: "memberDescription")
+    person.setValue(memberDescription, forKey: CoreDataAttributes.memberDescription)
     
     var error: NSError?
     if !managedContext.save(&error) {

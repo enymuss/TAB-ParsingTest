@@ -44,8 +44,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             allTeamMembersArray = results
         }
         
-        //teamMembersCollectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: (allTeamMembersArray.count-1), inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Right, animated: true)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,51 +58,54 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let kCellIdentifier: String = "TeamMemberCell"
+        let teamMember = allTeamMembersArray[indexPath.row]
         
         var memberCell = collectionView.dequeueReusableCellWithReuseIdentifier(kCellIdentifier, forIndexPath: indexPath) as MemberCollectionViewCell
         
-        let teamMember = allTeamMembersArray[indexPath.row]
+        let memberImageURLString = teamMember.valueForKey(CoreDataAttributes.imageURLString) as String
+        let memberImageURL = NSURL(string: memberImageURLString) as NSURL?
+
+        if((teamMember.valueForKey(CoreDataAttributes.imageData)) != nil) {
+            let imageData = teamMember.valueForKey(CoreDataAttributes.imageData) as NSData
+            memberCell.cellImageView.image = UIImage(data: imageData)
+            
+        } else {
+            memberCell.cellImageView.image = UIImage(named: "Image Buffer.jpeg")
+            
+            // download the image asynchronously and save
+            downloadImageWithURL(memberImageURL!, completion: { (succeeded: Bool, data: NSData) -> Void in
+                if (succeeded) {
+                    memberCell.cellImageView.image = UIImage(data: data)
+                    self.allTeamMembersArray[indexPath.row].setValue(data, forKey: CoreDataAttributes.imageData)
+                    
+                } else {
+                    println("Error")
+                }
+            })
+        }
         
-        memberCell.cellImageView = roundProfilePicture(memberCell.cellImageView, indexPath: indexPath)
-        
-        downloadImageWithURL(NSURL(string: "http://www.theappbusiness.com/wp-content/uploads/2013/06/dan-e1372264031694.jpg")!, completion: { (succeeded: Bool, image: UIImage) -> Void in
-            if (succeeded) {
-                memberCell.cellImageView.image = image
-            } else {
-                println("Error")
-            }
-        })
-        
-        memberCell.nameLabel.text = teamMember.valueForKey("nameAndSurname") as String?
-        memberCell.positionLabel.text = teamMember.valueForKey("positionInCompany") as String?
-        memberCell.descriptionTextView.text = teamMember.valueForKey("memberDescription") as String?
+        memberCell.nameLabel.text = teamMember.valueForKey(CoreDataAttributes.nameAndSurname) as String?
+        memberCell.positionLabel.text = teamMember.valueForKey(CoreDataAttributes.positionInCompany) as String?
+        memberCell.descriptionTextView.text = teamMember.valueForKey(CoreDataAttributes.memberDescription) as String?
+        memberCell.cellImageView = roundImageView(memberCell.cellImageView)
         
         memberCell.addSubview(addBorderAroundImageView(memberCell.cellImageView))
         
         return memberCell
     }
     
-    func downloadImageWithURL (url: NSURL, completion: ((Bool, UIImage) -> Void)?) {
+    func downloadImageWithURL (url: NSURL, completion: ((Bool, NSData) -> Void)?) {
         var myRequest = NSMutableURLRequest(URL: url)
         NSURLConnection.sendAsynchronousRequest(myRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError?) -> Void in
             if ((error) == nil) {
-                println(url)
-                var image = UIImage(data: data)
-                completion!(true, image!)
+                completion!(true, data!)
             } else {
-                completion!(false, UIImage())
+                completion!(false, data!)
             }
         }
     }
     
-    func roundProfilePicture (imageView: UIImageView, indexPath: NSIndexPath) -> UIImageView {
-        
-        // load image
-        let teamMember = allTeamMembersArray[indexPath.row]
-        var imageData = teamMember.valueForKey("imageData") as NSData?
-        imageView.image = UIImage(named: "Image Buffer.jpeg")
-        
-        
+    func roundImageView (imageView: UIImageView) -> UIImageView {
         // round the edges
         imageView.layer.cornerRadius = imageView.frame.size.width/2
         imageView.layer.masksToBounds = true

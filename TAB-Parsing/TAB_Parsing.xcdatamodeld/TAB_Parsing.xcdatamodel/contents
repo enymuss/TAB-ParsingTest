@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Member" syncable="YES">
-        <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageURLString" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="memberDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nameAndSurname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="positionInCompany" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Member" positionX="-54" positionY="-18" width="128" height="110"/>
+        <element name="Member" positionX="-54" positionY="-18" width="128" height="120"/>
     </elements>
 </model>
