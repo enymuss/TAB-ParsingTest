@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TAB-Parsing
 //
-//  Created by Jolanta Karwowska on 17/11/2014.
+//  Created by Richard Szczerba on 17/11/2014.
 //  Copyright (c) 2014 Richard Szczerba. All rights reserved.
 //
 
@@ -14,18 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     return true
   }
-
-  func applicationWillResignActive(application: UIApplication) {}
-
-  func applicationDidEnterBackground(application: UIApplication) {}
-
-  func applicationWillEnterForeground(application: UIApplication) {}
-
-  func applicationDidBecomeActive(application: UIApplication) {}
 
   func applicationWillTerminate(application: UIApplication) {
     self.saveContext()

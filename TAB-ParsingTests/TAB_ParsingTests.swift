@@ -2,7 +2,7 @@
 //  TAB_ParsingTests.swift
 //  TAB-ParsingTests
 //
-//  Created by Jolanta Karwowska on 17/11/2014.
+//  Created by Richard Szczerba on 17/11/2014.
 //  Copyright (c) 2014 Richard Szczerba. All rights reserved.
 //
 
