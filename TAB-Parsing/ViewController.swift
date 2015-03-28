@@ -41,7 +41,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
         
         if let results = fetchedResults {
-            println(results)
             allTeamMembersArray = results
         }
         
@@ -67,6 +66,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let teamMember = allTeamMembersArray[indexPath.row]
         
         memberCell.cellImageView = roundProfilePicture(memberCell.cellImageView, indexPath: indexPath)
+        
+        downloadImageWithURL(NSURL(string: "http://www.theappbusiness.com/wp-content/uploads/2013/06/dan-e1372264031694.jpg")!, completion: { (succeeded: Bool, image: UIImage) -> Void in
+            if (succeeded) {
+                memberCell.cellImageView.image = image
+            } else {
+                println("Error")
+            }
+        })
+        
         memberCell.nameLabel.text = teamMember.valueForKey("nameAndSurname") as String?
         memberCell.positionLabel.text = teamMember.valueForKey("positionInCompany") as String?
         memberCell.descriptionTextView.text = teamMember.valueForKey("memberDescription") as String?
@@ -76,13 +84,26 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return memberCell
     }
     
+    func downloadImageWithURL (url: NSURL, completion: ((Bool, UIImage) -> Void)?) {
+        var myRequest = NSMutableURLRequest(URL: url)
+        NSURLConnection.sendAsynchronousRequest(myRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError?) -> Void in
+            if ((error) == nil) {
+                println(url)
+                var image = UIImage(data: data)
+                completion!(true, image!)
+            } else {
+                completion!(false, UIImage())
+            }
+        }
+    }
+    
     func roundProfilePicture (imageView: UIImageView, indexPath: NSIndexPath) -> UIImageView {
         
         // load image
         let teamMember = allTeamMembersArray[indexPath.row]
         var imageData = teamMember.valueForKey("imageData") as NSData?
-        // download image here and save it to coreData
-        imageView.image = UIImage(data: imageData!)
+        imageView.image = UIImage(named: "Image Buffer.jpeg")
+        
         
         // round the edges
         imageView.layer.cornerRadius = imageView.frame.size.width/2

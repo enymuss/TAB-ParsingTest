@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BB1C11343159AB0E0BE954DA"
+               BlueprintIdentifier = "640A68832244DC6D6DCB2C90"
                BuildableName = "libPods-TAB-Parsing.a"
                BlueprintName = "Pods-TAB-Parsing"
                ReferencedContainer = "container:Pods.xcodeproj">

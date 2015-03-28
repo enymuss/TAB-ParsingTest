@@ -34,11 +34,7 @@ func saveToCoreData (object: TFHppleElement) {
     let profileImageString = object.children[0].firstChild!.objectForKey("src")
     let imageURL = NSURL(string: profileImageString)
     let profileImageData = NSData(contentsOfURL: imageURL!)
-    downloadImageWithURL(imageURL!, { (succeeded: Bool?, image: UIImage?) -> Void in
-        if (succeeded!) {
-            person.setValue(profileImageData, forKey: "imageData")
-        }
-    })
+    person.setValue(profileImageData, forKey: "imageData")
     
     
     let nameAndSurname = object.children[1].firstChild!.content
@@ -56,17 +52,5 @@ func saveToCoreData (object: TFHppleElement) {
     }
     
     
-}
-
-func downloadImageWithURL (url: NSURL, completion: ((Bool, UIImage) -> Void)?) {
-    var myRequest = NSMutableURLRequest(URL: url)
-    NSURLConnection .sendAsynchronousRequest(myRequest, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError?) -> Void in
-        if ((error) != nil) {
-            var image = UIImage(data: data)
-            completion!(true, image!)
-        } else {
-            println("false, error");
-        }
-    }
 }
 
